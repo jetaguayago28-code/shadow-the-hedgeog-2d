@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dhhwpb8cm86e5"]
+
+[ext_resource type="Script" uid="uid://d1csn7pg571e5" path="res://script/black_arms.gd" id="1_46lmj"]
+[ext_resource type="Texture2D" uid="uid://dj36w3h6mfx5l" path="res://sprites/cenario/black arms sprite 1.png" id="1_cagjl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46lmj"]
+atlas = ExtResource("1_cagjl")
+region = Rect2(0, 0, 67, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46lmj")
+}],
+"loop": 1,
+"name": &"black army",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jml13"]
+radius = 14.0
+height = 54.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(18, 51)
+
+[node name="black arms" type="CharacterBody2D" unique_id=1465762601]
+collision_layer = 4
+script = ExtResource("1_46lmj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1843914584]
+position = Vector2(76.75, 57.999996)
+scale = Vector2(0.69402987, 0.7777777)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"black army"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1652630725]
+position = Vector2(81, 59)
+shape = SubResource("CapsuleShape2D_jml13")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=430736505]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1986629860]
+position = Vector2(81, 58.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0.75767684, 0.6331268, 0, 0.41960785)
